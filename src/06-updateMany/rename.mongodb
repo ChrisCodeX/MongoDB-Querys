@@ -1,0 +1,15 @@
+use('sample_training')
+
+// Change field name
+db.zips.updateMany(
+  // query
+  {
+    city: 'CLEVELAND'
+  },
+  // changes - set - new attribute
+  {
+    $rename: {
+      myAtr: 'my_data'
+    }
+  }
+)
