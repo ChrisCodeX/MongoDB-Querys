@@ -1,0 +1,14 @@
+use('sample_training')
+
+db.products.updateMany(
+  // query
+  {
+    city: 'CLEVELAND'
+  },
+  // changes - increment
+  {
+    $inc: {
+      pop: 1000
+    }
+  }
+)
