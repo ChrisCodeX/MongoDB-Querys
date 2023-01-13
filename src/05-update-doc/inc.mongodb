@@ -1,0 +1,13 @@
+use('my_store')
+
+db.products.updateOne(
+  {
+    _id: 2
+  },
+  // Incremento de 100
+  {
+    $inc: {
+      price: 100
+    }
+  }
+)
