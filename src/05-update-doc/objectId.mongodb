@@ -1,0 +1,14 @@
+use('my_store')
+
+db.products.updateOne(
+  {
+    _id: ObjectId("63c1ab504b9111342be9fc1c")
+  },
+  {
+    $set: {
+      name: "Product 2 - renamed"
+    }
+  }
+)
+
+db.products.find()
