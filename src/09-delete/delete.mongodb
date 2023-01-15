@@ -1,0 +1,7 @@
+use('my_store')
+
+// Delete One
+db.products.deleteOne({_id: 2})
+
+// Delete Many
+db.products.deleteMany({price: 100})
