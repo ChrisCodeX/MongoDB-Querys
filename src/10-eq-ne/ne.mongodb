@@ -1,0 +1,13 @@
+use('my_store')
+
+// db.inventory.find({
+//   qty: {
+//     $ne: 15
+//   }
+// })
+
+db.inventory.find({
+  "item.code": {
+    $ne: '123'
+  }
+})

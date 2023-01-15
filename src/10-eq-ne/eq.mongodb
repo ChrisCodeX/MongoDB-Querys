@@ -1,0 +1,14 @@
+use('my_store')
+
+// Find one element
+// db.inventory.find({
+//   qty: {
+//     $eq: 15
+//   }
+// })
+
+// Find in sub object
+db.inventory.find({
+  "item.name": 'ab'
+})
+
