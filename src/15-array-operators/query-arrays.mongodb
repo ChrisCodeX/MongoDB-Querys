@@ -1,0 +1,65 @@
+use('my_store')
+
+/* $in -> values & arrays (or) */
+// db.inventory.find({
+//   qty: {
+//     $in: [15, 20]
+//   }
+// })
+
+/* $nin -> not $in */
+// db.inventory.find({
+//   qty: {
+//     $nin: [20, 15]
+//   }
+// })
+
+/* Find within an array */
+// Way 1
+// db.inventory.find({
+//   tags: "school"
+// })
+
+// Way 2
+// db.inventory.find({
+//   tags: {
+//     $in: ["school"]
+//   }
+// })
+
+/* Find in an array */
+// Find the exact array
+// db.inventory.find({
+//   tags: [
+//     "school",
+//     "book"
+//   ]
+// })
+
+// find elements includes in an array
+// db.inventory.find({
+//   tags: {
+//     $all: [
+//       "school",
+//       "book"
+//     ]
+//   }
+// })
+
+// find by array length
+// db.inventory.find({
+//   tags: {
+//     $size: 2
+//   }
+// })
+
+db.survey.find({
+  results: {
+    $elemMatch: {
+      product: "xyz",
+      score: {
+        $gte: 7
+      }
+    }
+  }
+})
