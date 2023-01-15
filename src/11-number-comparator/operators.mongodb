@@ -1,0 +1,23 @@
+use("my_store")
+
+// Using $gt (>) $gte (>=)
+db.inventory.find({
+  qty: {
+    $gt: 11
+  }
+})
+
+// Using $lt (<) $lte (<=)
+db.inventory.find({
+  qty: {
+    $lte: 20
+  }
+})
+
+// Join
+db.inventory.find({
+  qty: {
+    $gte: 20,
+    $lte: 30
+  }
+})
