@@ -1,0 +1,33 @@
+use('my_store')
+
+// First insert
+// db.iot.updateOne(
+//   {
+//     sensor: 'A001',
+//     date: '2022-01-04'
+//   },
+//   {
+//     $push: {
+//       readings: 1234
+//     }
+//   },
+//   {
+//     upsert: true
+//   }
+// )
+
+// Second insert
+db.iot.updateOne(
+  {
+    sensor: 'A001',
+    date: '2022-01-04'
+  },
+  {
+    $push: {
+      readings: 4315
+    }
+  },
+  {
+    upsert: true
+  }
+)
