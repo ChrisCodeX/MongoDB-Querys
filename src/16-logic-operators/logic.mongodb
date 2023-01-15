@@ -1,0 +1,42 @@
+use('sample_training')
+
+// $and implicit
+// db.inspections.find({
+//   result: "No Violation Issued",
+//   sector: "Cigarette Retail Dealer - 127"
+// })
+
+// $and explicit
+// db.inspections.find({
+//   $and: [
+//     { result: "No Violation Issued" },
+//     { sector: "Cigarette Retail Dealer - 127" }
+//   ]
+// })
+
+// $or
+// db.inspections.find({
+//   $or: [
+//     { result: "No Violation Issued" },
+//     { result: "Violation Issued" }
+//   ]
+// })
+
+// $nor
+// db.inspections.find({
+//   $nor: [
+//     { result: "No Violation Issued" },
+//     { result: "Violation Issued" }
+//   ]
+// }, {
+//   result: true
+// })
+
+// $not
+db.inspections.find({
+  result: {
+    $not: {
+      $regex: /No Violation Issued/
+    }
+  }
+})
