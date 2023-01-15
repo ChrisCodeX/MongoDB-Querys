@@ -1,0 +1,16 @@
+use('my_store')
+
+db.inventory.find({
+  "item.description": {
+    // Expresión regular para buscar que incluya la palabra line
+    // $regex: /line/
+    // Ignore mayúsculas y minúsculas
+    // $regex: /LINE/i
+    // Termine en line
+    // $regex: /line$/
+    // Inicie en line
+    // $regex: /^single/i
+    // inicio y que incluya el salto de linea
+    $regex: /^s/im
+  }
+})
